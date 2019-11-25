@@ -27,23 +27,23 @@ Resources:
   Meniu:
       Type: 'AWS::DynamoDB::Table'
       Properties:
-      AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
-        - AttributeName: vendorId
-          AttributeType: S
-        - AttributeName: name
-          AttributeType: S 
-        - AttributeName: description
-          AttributeType: S # cash/card
-        - AttributeName: price
-          AttributeType: N 
-        - AttributeName: createdOn
-          AttributeType: S # unix timestamp
-      KeySchema:
-        - AttributeName: vendorId
-          KeyType: HASH
-      ProvisionedThroughput:
-        ReadCapacityUnits: 1
-        WriteCapacityUnits: 1
-      TableName: 'meniu'
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: vendorId
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S 
+          - AttributeName: description
+            AttributeType: S # cash/card
+          - AttributeName: price
+            AttributeType: N 
+          - AttributeName: createdOn
+            AttributeType: S # unix timestamp
+        KeySchema:
+          - AttributeName: vendorId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: 'meniu'
