@@ -8,7 +8,7 @@ Resources:
         - AttributeName: vendorId
           AttributeType: S
         - AttributeName: order
-          AttributeType: SS # stirng[]
+          AttributeType: SS # string[]
         - AttributeName: payment
           AttributeType: S # cash/card
         - AttributeName: customerId

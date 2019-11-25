@@ -44,29 +44,29 @@ resources:
 # The `functions` block defines what code to deploy
 functions:
   signinUri:
-    handler: authorization/handler.signinUri
+    handler: domains/authorization/handler.signinUri
     events:
       - http:
           path: sign-in-uri
           method: get
           cors: true
   token:
-    handler: authorization/handler.token
+    handler: domains/authorization/handler.token
     events:
       - http:
           path: token
           method: post
           cors: true
-  # createMeniuItem:
-  #   handler: user/handler.create
-  #   events:
-  #     - http:
-  #         path: meniu/{vendorId}
-  #         method: post
-  #         cors: true
-  #         authorizer:
-  #           name: authorizer
-  #           arn:  "${self:provider.environment.COGNITO_ARN}"
-  #         request:
-  #             schema:
-  #               application/json: ${file(create_request.json)}
+  createMeniuItem:
+    handler: domains/meniu/handler.create
+    events:
+      - http:
+          path: meniu/{vendorId}
+          method: post
+          cors: true
+          authorizer:
+            name: authorizer
+            arn:  "${self:provider.environment.COGNITO_ARN}"
+          # request:
+          #     schema:
+          #       application/json: ${file(create_request.json)}

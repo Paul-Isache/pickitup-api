@@ -10,5 +10,10 @@
     "serverless"
   ],
   "author": "Paul Isache",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.578.0",
+    "node-fetch": "^2.6.0",
+    "uuid": "^3.3.3"
+  }
 }
