@@ -3,47 +3,47 @@ Resources:
     Type: 'AWS::DynamoDB::Table'
     Properties:
       AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
+        # - AttributeName: id
+        #   AttributeType: S
         - AttributeName: vendorId
           AttributeType: S
-        - AttributeName: order
-          AttributeType: SS # string[]
-        - AttributeName: payment
-          AttributeType: S # cash/card
+        # - AttributeName: order
+        #   AttributeType: SS # string[]
+        # - AttributeName: payment
+        #   AttributeType: S # cash/card
         - AttributeName: customerId
           AttributeType: S
-        - AttributeName: createdOn
-          AttributeType: S # unix timestamp
+        # - AttributeName: createdOn
+        #   AttributeType: S # unix timestamp
       KeySchema:
         - AttributeName: vendorId
           KeyType: HASH
         - AttributeName: customerId
-          KeyType: HASH
+          KeyType: RANGE
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
       TableName: 'orders'
   Meniu:
-      Type: 'AWS::DynamoDB::Table'
-      Properties:
-        AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: S
-          - AttributeName: vendorId
-            AttributeType: S
-          - AttributeName: name
-            AttributeType: S 
-          - AttributeName: description
-            AttributeType: S # cash/card
-          - AttributeName: price
-            AttributeType: N 
-          - AttributeName: createdOn
-            AttributeType: S # unix timestamp
-        KeySchema:
-          - AttributeName: vendorId
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: 'meniu'
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      AttributeDefinitions:
+        # - AttributeName: id
+        #   AttributeType: S
+        - AttributeName: vendorId
+          AttributeType: S
+        # - AttributeName: name
+        #   AttributeType: S 
+        # - AttributeName: description
+        #   AttributeType: S # cash/card
+        # - AttributeName: price
+        #   AttributeType: N 
+        # - AttributeName: createdOn
+        #   AttributeType: S # unix timestamp
+      KeySchema:
+        - AttributeName: vendorId
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      TableName: 'meniu'
